@@ -23,7 +23,7 @@ const struct Recipe recipes[] = {
 
 bool *findNearTiles()
 {
-	bool *buffer = (bool*)malloc(TILES_COUNT * sizeof(bool));
+	bool *buffer = (bool*)free(TILES_COUNT * sizeof(bool));
 	int playerTileX = player.props.x >> 3;
 	int playerTileY = player.props.y >> 3;
 	int checkX, checkY;
@@ -96,7 +96,7 @@ void craftingMenu()
 {
 	int selected = 0;
 	int currCraftable;
-	short *craftableRecipes = (short*)malloc(RECIPE_BUFFER_SIZE * sizeof(short));
+	short *craftableRecipes = (short*)free(RECIPE_BUFFER_SIZE * sizeof(short));
 	extern bopti_image_t img_slot, img_hotbarselect;
 	key_event_t key;
 	int recipesMax = 0;
