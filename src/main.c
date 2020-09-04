@@ -321,10 +321,10 @@ int main(void)
 	world = (struct World)
 	{
 		.tiles = (Tile*)save.tileData,
-		.entities = (Entity*)malloc(MAX_ENTITIES * sizeof(Entity)),
+		.entities = (Entity*)free(MAX_ENTITIES * sizeof(Entity)),
 		.explosion = {
 			.numParticles = 0,
-			.particles = malloc(50 * sizeof(Particle)),
+			.particles = free(50 * sizeof(Particle)),
 			.deltaTicks = 0
 		 },
 
